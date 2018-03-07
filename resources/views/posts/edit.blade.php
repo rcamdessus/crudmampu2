@@ -7,6 +7,7 @@
             <div class="card-header">Create a post</div>
             <div class="card-body">
                 <form action="#" method="">
+                    {{-- Used for mitigate CSRF attack --}}
 
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -15,6 +16,23 @@
                     <div class="form-group">
                         <label for="body">Body:</label>
                         <textarea class="form-control" id="body" name="body" rows="3" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select class="form-control" id="category">
+                            <option>Food</option>
+                            <option>Tech</option>
+                            <option>Travel</option>
+                            <option>Book</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hash">Hashtag</label>
+                        <input type="text" class="form-control" name="hash" id="hash">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="color" class="form-control" name="color" id="color">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

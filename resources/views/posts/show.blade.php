@@ -4,15 +4,39 @@
 <div class="row mt-4">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">Title Post
+            <div class="card-header">{{ $post->title }}
                     <span class="float-right">
-                        Date Created
+                        {{ $post->created_at->diffForHumans() }}
                     </span>
             </div>
             <div class="card-body">
-                Body Post
+                {{ $post->body }}
+            </div>
+
+        </div>
+
+        <div class="card mt-4 card-primary">
+            <div class="card-header">Comments</div>
+            <div class="card-body">
+                <form class="form-control" action="#" method="post">
+                    <div class="form-group">
+                      <label for="comment">Comment:</label>
+                      <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
-    </div>
+        <div class="card mt-4">
+            <div class="card-header">Nama Orang
+                    <span class="float-right">
+                        {{ $post->created_at->diffForHumans() }}
+                    </span>
+            </div>
+            <div class="card-body">
+                Content Comment tersebut
+            </div>
+        </div>
+
 </div>
 @endsection

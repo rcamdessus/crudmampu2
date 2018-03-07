@@ -4,9 +4,11 @@
 <div class="row mt-4">
     <div class="col-md-12">
         <div class="card">
+
             <div class="card-header">Create a post</div>
-            <div class="card-body">
-                <form action="#">
+
+                <form action="{{ route('posts.store')}}" method="POST">
+                    @csrf
 
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -16,9 +18,26 @@
                         <label for="body">Body:</label>
                         <textarea class="form-control" id="body" name="body" rows="3"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <select class="form-control" id="category">
+                            <option>Food</option>
+                            <option>Tech</option>
+                            <option>Travel</option>
+                            <option>Book</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="hash">Hashtag:</label>
+                        <input type="text" class="form-control" id="hash">
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color:</label>
+                        <input type="color" class="form-control" id="color">
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </div>
+
         </div>
     </div>
 </div>
