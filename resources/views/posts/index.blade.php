@@ -29,16 +29,16 @@
                                 <td>{{ $post->updated_at}}</td>
                                 <td>
                                     <a class="btn btn-sm btn-primary" href="{{ route('posts.show', $post->id)}}">Show</a>
-                                    <a class="btn btn-sm btn-success" href="#">Edit</a>
-                                    <a class="btn btn-sm btn-danger" href="#">Delete</a>
+                                    <a class="btn btn-sm btn-success" href="{{ route('posts.edit', $post->id)}}">Edit</a>
+                                    {{-- <a class="btn btn-sm btn-danger" href="{{ route('posts.delete', $post->id)}}">Delete</a> --}}
                                     <!-- <a href="#"></a> hanya boleh menghantar get request sahaja -->
                                     <!-- jadi untuk button delete, kita wajib letakkan button itu didalam form dan hantar sebagai DELETE request -->
-                                    {{-- <form action="{{ route('posts.destroy', $post) }}" method="POST" style="display:inline">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
+                                    {{-- <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline">
+                                        @csrf
+                                        @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                     </form> --}}
-                                    {{-- <a href="#" data-title="{{ $post->title }}" class="btn btn-danger btn-sm delete-rekod">Delete</a> --}}
+                                    <a href="{{ route('posts.destroy', $post->id) }}" data-title="{{ $post->title }}" class="btn btn-danger btn-sm delete-rekod">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
